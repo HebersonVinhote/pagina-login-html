@@ -18,48 +18,96 @@ body {
     align-items: center; /*Alinha altura no centro*/
     justify-content: center; /*Alinha largura no centro*/
 }
+
+/*caixa onde se encontra os inputs e imagens*/
 main.container {
     background: white;
-    min-width: 200px;
+    min-width: 20px;
     min-height: 40vh;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 5px, 5px, 15px rgba(10, 10, 10, 1.0);
     border-radius: 8px;
 }
 
+/*configura a string LOGIN no box*/
 main h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     color: #8e2de2; 
     margin-bottom: 2rem; /*afasta o "Login" dos demais item*/
     position: relative;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 main h2::before {
     content: "";
     position: absolute;
-    height: 2px;
-    width: 45px;
+    height: 4px;
+    width: 30px;
     bottom: 3px;
     left: 0;
     border-radius: 8px;
     background: linear-gradient(45deg, #8e2de2,#4a00e0);
 
 }
-
+/*adição e configuração da imagem*/
 main img {
     max-height: 15rem;
-    max-width: 15rem;
+    max-width: 20rem;
     border-radius: 9px;
+    position: static;
    
+}
+
+
+/*ajuta o botão de continuar*/
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 .input-field {
     position: relative;
 
 }
+
+/*cria um espaçamento entre as caixas de input*/
+form .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+
+/*cria a primeira linha da transição*/
+.input-field .underline::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+/*Cria a segunda linha da tansição*/
+.input-field .underline::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #8e2de2,#4a00e0);
+    transform: scaleX(0); /*o culta a segunda linha*/
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+/*Cria a transição de linhas ao selecionar input*/
+.input-field input:focus ~ .underline::after {
+    transform: scaleX(1);
+}
+
 .input-field input{
     outline: none;
-    font-size: 1.9rem;
+    font-size: 1rem;
     color: rgba(137, 19, 187, 0.7);
 }
 
@@ -68,8 +116,60 @@ main img {
 }
 
 form input[type= "submit"] {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 300;
     margin-top: 1rem;
-    padding: 0.4;
+    margin-bottom: 1rem;
     background: linear-gradient(to left, #4776E6, #8e54e9);
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 4px;
 }
+form input[type= "submit"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer span {
+    margin-bottom: 1rem;
+    color: rgba(137, 19, 187, 0.7);
+    text-align: center;
+}
+
+.footer .social-field {
+    padding: 0.4rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 0.03rem;
+    margin-bottom: 0.03rem;
+
+}
+
+
+
+.footer .social-field a i {
+    margin: 0 0.5rem;
+}
+
+.footer .social-field a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer .social-field.facebook {
+    background-color: #4267B2;
+}
+
+.footer .social-field.instagram {
+    background: linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+}
+
+.footer .social-field.google {
+    background-color: #DB4437;
+}
+
