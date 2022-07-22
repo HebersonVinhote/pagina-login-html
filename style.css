@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    background: linear-gradient(45deg, #8e2de2,#4a00e0); /*Alterar a Cor de fundo*/
+    background-repeat: no-repeat; /*cor de fundo não repete*/
+    min-height: 100vh; /*Altura Minina da pagina*/
+    min-width: 100vh; /*Largura minima da pagina*/
+    display: flex; /*o tipo flex permite centralizar tudo*/
+    align-items: center; /*Alinha altura no centro*/
+    justify-content: center; /*Alinha largura no centro*/
+}
+main.container {
+    background: white;
+    min-width: 200px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px, 5px, 15px rgba(10, 10, 10, 1.0);
+    border-radius: 8px;
+}
+
+main h2 {
+    font-size: 4rem;
+    color: #8e2de2; 
+    margin-bottom: 2rem; /*afasta o "Login" dos demais item*/
+    position: relative;
+}
+
+main h2::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 45px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2,#4a00e0);
+
+}
+
+.input-field {
+    position: relative;
+
+}
+.input-field input{
+    outline: none;
+    font-size: 1.5rem;
+    color: rgba(137, 19, 187, 0.7);
+}
+
+.input-field input ::placeholder{
+    color: rgba(137, 19, 187, 0.7);
+}
